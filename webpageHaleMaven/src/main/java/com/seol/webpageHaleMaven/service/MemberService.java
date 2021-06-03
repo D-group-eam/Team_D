@@ -1,5 +1,7 @@
 package com.seol.webpageHaleMaven.service;
 
+import java.util.List;
+
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import com.seol.webpageHaleMaven.entity.Member;
@@ -12,4 +14,10 @@ public interface MemberService extends UserDetailsService {
 	
 	void save(CrmMember CrmUser);
 	/*  을 통해서 유저 정보를 저장한다. */
+
+	List<Member> getMember();
+
+	Member getMember(int theId);
+
+	void saveOrUpdate(Member theMember);
 }

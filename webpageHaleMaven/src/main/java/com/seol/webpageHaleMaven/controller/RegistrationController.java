@@ -65,7 +65,7 @@ public class RegistrationController {
 //존재하지 않으면 회원가입 유저 클래스를 다시 만들어서 모델에 부여하고 회원가입 페이지로 이동
 		if(existing != null) {
 			 theModel.addAttribute("crmMember", new CrmMember());
-			 theModel.addAttribute("registrationError", "User name already exists.");
+			 theModel.addAttribute("registrationError", "아이디가 이미 존재해요");
 			 
 			 logger.warning("User name already exist");
 			 return "registration-form";

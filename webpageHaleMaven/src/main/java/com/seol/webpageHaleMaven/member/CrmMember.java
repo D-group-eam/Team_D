@@ -8,34 +8,34 @@ import com.seol.webpageHaleMaven.validation.ValidEmail;
 
 
 @FieldMatch.List({
-    @FieldMatch(first = "mem_password", second = "matchingMem_password", message = "The password fields must match")
+    @FieldMatch(first = "mem_password", second = "matchingMem_password", message = "비밀번호가 일치하지 않아요.")
 })
 public class CrmMember {
 
 
-	@NotNull(message = "is required")
-	@Size(min = 1, message = "is required")
+	@NotNull(message = "아이디를 입력하세요")
+	@Size(min = 1, message = "아이디를 입력하세요")
 	private String mem_username;
 
 	
-	@NotNull(message = "is required")
-	@Size(min = 1, message = "is required")
+	@NotNull(message = "비밀번호를 입력하세요")
+	@Size(min = 1, message = "비밀번호를 입력하세요")
 	private String mem_password;
 	
-	@NotNull(message = "is required")
-	@Size(min = 1, message = "is required")
+	@NotNull(message = "비밀번호를 입력하세요")
+	@Size(min = 1, message = "비밀번호를 입력하세요")
 	private String matchingMem_password;
 
-	@NotNull(message = "is required")
-	@Size(min = 1, message = "is required")
+	@NotNull(message = "닉네임를 입력하세요")
+	@Size(min = 1, message = "닉네임을 입력하세요")
 	private String mem_nickname;
 
 	//@NotNull(message = "is required")
 	private Integer mem_sex;
 
 	@ValidEmail
-	@NotNull(message = "is required")
-	@Size(min = 1, message = "is required")
+	@NotNull(message = "이메일을 입력하세요")
+	@Size(min = 1, message = "이메일을 입력하세요")
 	private String mem_email;
 
 	//@NotNull(message = "is required")
@@ -46,7 +46,7 @@ public class CrmMember {
 	//@Size(min = 1, message = "is required")
 	private String mem_zipcode;
 
-	@NotNull(message = "birthday is required")
+	@NotNull(message = "생일을 입력하세요")
 	private String mem_birthday;
 
 	//@NotNull(message = "is required")

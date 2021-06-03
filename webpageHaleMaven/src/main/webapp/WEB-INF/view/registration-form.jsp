@@ -42,22 +42,22 @@
 			<div class="panel panel-primary">
 
 				<div class="panel-heading">
-					<div class="panel-title">Register New User</div>
+					<div class="panel-title">회원가입 하기</div>
 				</div>
 
 				<div style="padding-top: 30px" class="panel-body">
 
-					<!-- Registration Form -->
+					<!-- 회원가입 Form -->
 					<form:form action="${pageContext.request.contextPath}/register/processRegistrationForm" 
 						  	   modelAttribute="crmMember"
 						  	   class="form-horizontal">
 
-					    <!-- Place for messages: error, alert etc ... -->
+					    <!-- 메시지 : error, alert 등등 ... -->
 					    <div class="form-group">
 					        <div class="col-xs-15">
 					            <div>
 								
-									<!-- Check for registration error -->
+									<!-- 에러메시지 스타일 -->
 									<c:if test="${registrationError != null}">
 								
 										<div class="alert alert-danger col-xs-offset-1 col-xs-10">
@@ -70,46 +70,46 @@
 					        </div>
 					    </div>
 
-						<!-- User name -->
+						<!-- 유저 아이디 -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
-							<form:errors path="mem_username" cssClass="error" />
-							<form:input path="mem_username" placeholder="username (*)" class="form-control" />
+<!-- 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
+ -->							<form:errors path="mem_username" cssClass="error" />
+							<form:input path="mem_username" placeholder="아이디 (*)" class="form-control" />
 						</div>
 
-						<!-- Password -->
+						<!-- 비밀번호 -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
-							<form:errors path="mem_password" cssClass="error" />
-							<form:password path="mem_password" placeholder="password (*)" class="form-control" />
+<!-- 							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
+ -->							<form:errors path="mem_password" cssClass="error" />
+							<form:password path="mem_password" placeholder="비밀번호 (*)" class="form-control" />
 						</div>
 						
-						<!-- Confirm Password -->
+						<!-- 비밀번호 확인-->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
-							<form:errors path="matchingMem_password" cssClass="error" />
-							<form:password path="matchingMem_password" placeholder="confirm password (*)" class="form-control" />
+<!-- 							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
+ -->							<form:errors path="matchingMem_password" cssClass="error" />
+							<form:password path="matchingMem_password" placeholder="비밀번호 확인 (*)" class="form-control" />
 						</div>
 					
 						
-						<!-- First name -->
+						<!-- 닉네임 -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
-							<form:errors path="mem_nickname" cssClass="error" />
-							<form:input path="mem_nickname" placeholder="nick name (*)" class="form-control" />
+<!-- 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
+ -->							<form:errors path="mem_nickname" cssClass="error" />
+							<form:input path="mem_nickname" placeholder="별명 (*)" class="form-control" />
 						</div>
 						
 	
 						
-						<!-- Email -->
+						<!-- 이메일  -->
 						<div style="margin-bottom: 25px" class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
-							<form:errors path="mem_email" cssClass="error" />
-							<form:input path="mem_email" placeholder="email (*)" class="form-control" />
+<!-- 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
+ -->							<form:errors path="mem_email" cssClass="error" />
+							<form:input path="mem_email" placeholder="이메일 (*)" class="form-control" />
 						</div>
 						
 						
-						<div>
+						<div style="margin-bottom: 25px" class="input-group">
 							<script>
 								$(function() {
 									$("#datepicker1").datepicker({
@@ -120,16 +120,16 @@
 								});
 							</script>
 							<form:errors path="mem_birthday" cssClass="error"/>
-							<form:input path="mem_birthday" type="text" id="datepicker1"/>
+							<form:input path="mem_birthday" placeholder="생일 (*)" type="text" id="datepicker1" class="form-control" />
 
 						</div>
 						
 						
 
-						<!-- Register Button -->
+						<!-- 등록 버튼  -->
 						<div style="margin-top: 10px" class="form-group">						
 							<div class="col-sm-6 controls">
-								<button type="submit" class="btn btn-primary">Register</button>
+								<button type="submit" class="btn btn-primary">등록하기</button>
 							</div>
 						</div>
 						

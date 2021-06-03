@@ -1,5 +1,6 @@
 package com.seol.webpageHaleMaven.dao;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.hibernate.Session;
@@ -60,4 +61,24 @@ public class MemberDaoImpl implements MemberDao{
 		//유저를 생성한다.
 		currentSession.saveOrUpdate(member);
 	}
+	
+//회원정보페이지에서 업데이트 저장
+
+	@Override
+	public List<Member> getMember() {
+
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query<Member> theQuery = currentSession.createQuery("from Member",Member.class);
+		List<Member> members= theQuery.getResultList();
+		return members;
+	}
+
+	@Override
+	public Member getMember(int theId) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Member theMember = currentSession.get(Member.class,theId);
+		return theMember;
+	}
+
+	
 }

@@ -2,6 +2,7 @@ package com.seol.webpageHaleMaven.service;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -33,7 +34,6 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private RoleDao roleDao;
 	
-
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 
@@ -47,7 +47,27 @@ public class MemberServiceImpl implements MemberService {
 //데이터베이스에 유저가 있는지 DAO에 명령한다. 이름으로 찾는다.
 		return memberDao.findByMemeberName(memberName);
 	}
-
+//멤버 전체 불러오기
+	@Override
+	@Transactional
+	public List<Member> getMember(){
+		
+		return memberDao.getMember();
+	}
+//아이디로 멤버 가져오기
+	@Override
+	@Transactional
+	public Member getMember(int theId) {
+		return memberDao.getMember(theId);
+	}
+	
+//멤버 저장하기
+//마이페이지에서 수정한 것을 저장
+	@Override
+	@Transactional
+	public void saveOrUpdate(Member theMember) {
+		memberDao.save(theMember);
+	}
 
 //트랜색션 기능을 자동으로 처리해주는 표시
 	@Override

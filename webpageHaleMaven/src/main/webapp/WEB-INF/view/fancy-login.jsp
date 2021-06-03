@@ -27,7 +27,7 @@
 			<div class="panel panel-info">
 
 				<div class="panel-heading">
-					<div class="panel-title">Sign In</div>
+					<div class="panel-title">로그인</div>
 				</div>
 
 				<div style="padding-top: 30px" class="panel-body">
@@ -46,7 +46,7 @@
 									<c:if test="${param.error != null}">
 										
 										<div class="alert alert-danger col-xs-offset-1 col-xs-10">
-											Invalid username and password.
+											아이디와 비밀번호가 맞지 않아요
 										</div>
 		
 									</c:if>
@@ -56,7 +56,7 @@
 									<c:if test="${param.logout != null}">
 										            
 										<div class="alert alert-success col-xs-offset-1 col-xs-10">
-											You have been logged out.
+											로그아웃 완료됐어요
 										</div>
 								    
 									</c:if>
@@ -69,20 +69,20 @@
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
 							
-							<input type="text" name="username" placeholder="username" class="form-control">
+							<input type="text" name="username" placeholder="아이디" class="form-control">
 						</div>
 
 	<!-- 패스워드 버튼 입력 파트-->
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
 							
-							<input type="password" name="password" placeholder="password" class="form-control" >
+							<input type="password" name="password" placeholder="비밀번호" class="form-control" >
 						</div>
 
 	<!-- 로그인버튼 -->
 						<div style="margin-top: 10px" class="form-group">						
 							<div class="col-sm-6 controls">
-								<button type="submit" class="btn btn-success">Login</button>
+								<button type="submit" class="btn btn-success">로그인</button>
 							</div>
 						</div>
 
@@ -98,7 +98,7 @@
 			</div>
 <!-- 회원가입 버튼 -->
 			<div>
-				<a href="${pageContext.request.contextPath}/register/showRegistrationForm" class="btn btn-primary" role="button" aria-pressed="true">Register New User</a>
+				<a href="${pageContext.request.contextPath}/register/showRegistrationForm" class="btn btn-primary" role="button" aria-pressed="true">회원가입</a>
 			</div>
 			
 			

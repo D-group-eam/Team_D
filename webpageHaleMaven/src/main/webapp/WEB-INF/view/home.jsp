@@ -28,11 +28,6 @@
 </security:authorize>
 
 <br> 반가워~</h2>
-	<security:authorize access="hasRole('ADMIN')">
-		<p>
-			<a href="${pageContext.request.contextPath}/admin/">관리자모드2</a>			
-		</p>
-	</security:authorize>
 	
 	<security:authorize access="isAnonymous()">
 			<div class="">
@@ -43,7 +38,7 @@
 	<security:authorize access="isAuthenticated()">
 		<p>
 		<form:form action="${pageContext.request.contextPath}/logout" method="POST">
-			<input type="submit" value="로그아웃"/>
+			<input type="submit"class="btn btn-danger"  value="로그아웃"/>
 		</form:form>
 		</p>
 	</security:authorize>
