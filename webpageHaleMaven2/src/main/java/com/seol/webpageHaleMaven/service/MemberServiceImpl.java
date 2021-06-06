@@ -21,6 +21,7 @@ import com.seol.webpageHaleMaven.entity.Member;
 import com.seol.webpageHaleMaven.entity.Role;
 import com.seol.webpageHaleMaven.member.CrmMember;
 import com.seol.webpageHaleMaven.member.EditMember;
+import com.seol.webpageHaleMaven.member.Password;
 
 //멤버 서비스 레이어 표시
 @Service
@@ -70,11 +71,32 @@ public class MemberServiceImpl implements MemberService {
 		Member member = memberDao.findByMemeberName(EditMember.getMem_username());
 		member.setMem_nickname(EditMember.getMem_nickname());
 		member.setMem_email(EditMember.getMem_email());
+		member.setMem_sex(EditMember.getMem_sex());
+		member.setMem_phone(EditMember.getMem_phone());
+		member.setMem_zipcode(EditMember.getMem_zipcode());
+		member.setMem_birthday(EditMember.getMem_birthday());
+		member.setMem_address1(EditMember.getMem_address1());
+		member.setMem_address2(EditMember.getMem_address2());
+		member.setMem_address3(EditMember.getMem_address3());
+		member.setMem_address4(EditMember.getMem_address4());
+		member.setMem_receive_email(EditMember.getMem_receive_email());
+		member.setMem_receive_sms(EditMember.getMem_receive_sms());
+		logger.info("=====>Processing 업데이트 : " + member.getMem_username());
+
+		memberDao.save(member);
 		
 		
+	}
+	
+	@Override
+	@Transactional
+	public void savePassword(Password password, String memberName) {
 		
-		
-		
+		Member member = memberDao.findByMemeberName(memberName);
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String securePassword = encoder.encode(password.getChangePassword());
+		member.setMem_password(securePassword);
+		memberDao.save(member);
 	}
 
 //트랜색션 기능을 자동으로 처리해주는 표시
@@ -86,29 +108,17 @@ public class MemberServiceImpl implements MemberService {
 		Member member = new Member();
 		
 		member.setMem_username(CrmMember.getMem_username());
-		
 		member.setMem_password(passwordEncoder.encode(CrmMember.getMatchingMem_password()));
-		
 		member.setMem_nickname(CrmMember.getMem_nickname());
-		
 		member.setMem_email(CrmMember.getMem_email());
-		
 		member.setMem_phone(CrmMember.getMem_phone());
-		
 		member.setMem_zipcode(CrmMember.getMem_zipcode());
-		
 		member.setMem_birthday(CrmMember.getMem_birthday());
-		
 		member.setMem_address1(CrmMember.getMem_address1());
-		
 		member.setMem_address2(CrmMember.getMem_address2());
-		
 		member.setMem_address3(CrmMember.getMem_address3());
-		
 		member.setMem_address4(CrmMember.getMem_address4());
-		
 		member.setMem_receive_sms(CrmMember.getMem_receive_sms());
-		
 		member.setMem_receive_email(CrmMember.getMem_receive_email());
 //역할 클래스 객체를 리스트로서 인자에 넣는다. 
 		member.setRoles(Arrays.asList(roleDao.findRoleByName("ROLE_MEMBER")));

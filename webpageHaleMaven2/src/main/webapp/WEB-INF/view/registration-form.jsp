@@ -70,21 +70,21 @@
 					        </div>
 					    </div>
 
-						<!-- 유저 아이디 -->
+<!-- 유저 아이디 -->
 						<div style="margin-bottom: 25px" class="input-group">
 <!-- 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
  -->							<form:errors path="mem_username" cssClass="error" />
 							<form:input path="mem_username" placeholder="아이디 (*)" class="form-control" />
 						</div>
 
-						<!-- 비밀번호 -->
+<!-- 비밀번호 -->
 						<div style="margin-bottom: 25px" class="input-group">
 <!-- 							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
  -->							<form:errors path="mem_password" cssClass="error" />
 							<form:password path="mem_password" placeholder="비밀번호 (*)" class="form-control" />
 						</div>
 						
-						<!-- 비밀번호 확인-->
+<!-- 비밀번호 확인-->
 						<div style="margin-bottom: 25px" class="input-group">
 <!-- 							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> 
  -->							<form:errors path="matchingMem_password" cssClass="error" />
@@ -92,7 +92,7 @@
 						</div>
 					
 						
-						<!-- 닉네임 -->
+<!-- 닉네임 -->
 						<div style="margin-bottom: 25px" class="input-group">
 <!-- 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
  -->							<form:errors path="mem_nickname" cssClass="error" />
@@ -101,7 +101,7 @@
 						
 	
 						
-						<!-- 이메일  -->
+<!-- 이메일  -->
 						<div style="margin-bottom: 25px" class="input-group">
 <!-- 							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
  -->							<form:errors path="mem_email" cssClass="error" />
@@ -109,10 +109,11 @@
 						</div>
 						
 						
+<!-- 생일 -->
 						<div style="margin-bottom: 25px" class="input-group">
 							<script>
 								$(function() {
-									$("#datepicker1").datepicker({
+									$("#datepicker2").datepicker({
 										changeMonth: true,
 										chagneYear: true,
 										dateFormat : 'yy-mm-dd'
@@ -120,13 +121,13 @@
 								});
 							</script>
 							<form:errors path="mem_birthday" cssClass="error"/>
-							<form:input path="mem_birthday" placeholder="생일 (*)" type="text" id="datepicker1" class="form-control" />
+							<form:input path="mem_birthday" placeholder="생일 (*)" type="text" id="datepicker2" class="form-control" />
 
 						</div>
 						
 						
 
-						<!-- 등록 버튼  -->
+<!-- 등록 버튼  -->
 						<div style="margin-top: 10px" class="form-group">						
 							<div class="col-sm-6 controls">
 								<button type="submit" class="btn btn-primary">등록하기</button>

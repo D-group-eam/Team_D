@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import com.seol.webpageHaleMaven.entity.Member;
 import com.seol.webpageHaleMaven.member.CrmMember;
 import com.seol.webpageHaleMaven.member.EditMember;
+import com.seol.webpageHaleMaven.member.Password;
 
 public interface MemberService extends UserDetailsService {
 	
@@ -21,4 +22,7 @@ public interface MemberService extends UserDetailsService {
 	Member getMember(int theId);
 
 	void saveOrUpdate(EditMember EditMember);
+
+
+	void savePassword(Password password, String memberName);
 }

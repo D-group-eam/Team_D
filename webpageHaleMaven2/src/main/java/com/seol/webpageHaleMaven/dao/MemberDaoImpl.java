@@ -18,7 +18,7 @@ public class MemberDaoImpl implements MemberDao{
 
 	private Logger logger = Logger.getLogger(getClass().getName());
 
-	//세션 팩토리를 만들어야 함
+//세션 팩토리를 만들어야 함
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -50,11 +50,11 @@ public class MemberDaoImpl implements MemberDao{
 		return theMember;
 	}
 
+//유저 정보를 업데이트하거나 등록한다.
 	@Override
 	public void save(Member member) {
 
 		logger.info("=====>Processing member DAO for : " + member.getMem_username() + member.getRoles() + member.getMem_birthday());
-
 		//세션 팩토리에서 현재 hibernate 세션 생성
 		Session currentSession = sessionFactory.getCurrentSession();
 

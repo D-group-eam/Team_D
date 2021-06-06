@@ -15,6 +15,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	
 	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	
+	
 </head>
 <body>
 
@@ -71,14 +78,26 @@
                 </div>
               </div>
             </div>
+            <script>
+$("#insert_btn").click(function(){
+    if(confirm("정말 등록하시겠습니까 ?") == true){
+        alert("등록되었습니다");
+    }
+    else{
+        return ;
+    }
+});
+</script>
+
+            
                  <div class="panel-footer">
                         <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
                         <span class="pull-right">
-                            <a href="${pageContext.request.contextPath}/member/editMember" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning">
+                            <a href="${pageContext.request.contextPath}/member/editMember" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning" id = "insert_btn">
                             <i class="glyphicon glyphicon-edit"></i>
                             </a>
                             
-                            <a data-original-title="Remove this user" data-toggle="tooltip"  type="button" class="btn btn-sm btn-danger" onClick="self.close();">
+                            <a href="${pageContext.request.contextPath}/member/deleteMember" data-original-title="Remove this user" data-toggle="tooltip"  type="button" class="btn btn-sm btn-danger" onClick="">
                             <i class="glyphicon glyphicon-remove">
                             </i>
                             </a>

@@ -52,7 +52,7 @@ public class RegistrationController {
 		
 		String memberName = theCrmMember.getMem_username();
 		logger.info("=====>Processing registration form for : " + memberName);
-
+		
 
 //컨트롤러에서 에러체크는 hasErrors 함수를 이용한다.
 		if (theBindingResult.hasErrors()) {
@@ -60,6 +60,7 @@ public class RegistrationController {
 
 			return "registration-form";
 		}
+
 //이름으로 데이터베이스에서 유저를 조회한다.
 		Member existing = memberService.findByUserName(memberName);	
 //존재하지 않으면 회원가입 유저 클래스를 다시 만들어서 모델에 부여하고 회원가입 페이지로 이동

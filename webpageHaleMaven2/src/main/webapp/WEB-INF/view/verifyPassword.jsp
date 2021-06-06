@@ -35,27 +35,9 @@
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="${pageContext.request.contextPath}/">Home</a></li>
-							<li class="active"><a href="${pageContext.request.contextPath}/member/editMember">회원 정보</a></li>
+							<li><a href="${pageContext.request.contextPath}/member/editMember">회원 정보</a></li>
 
-							<li><a href="${pageContext.request.contextPath}/member/verifyPassword">비밀번호변경</a></li>
-
-							<!-- <li><a href="/asp-shoppingMall/mall/memberList.asp">회원록록</a></li>
-
-							<li><a href="/asp-shoppingMall/mall/logout.asp">로그아웃</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown" role="button" aria-expanded="false">님
-									환영합니다. <span class="caret"></span>
-							</a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="/asp-shoppingMall/mall/regedit.asp">회원정보
-											수정</a></li>
-									<li><a href="#">Another action</a></li>
-									<li><a href="#">Something else here</a></li>
-									<li class="divider"></li>
-									<li class="dropdown-header">Nav header</li>
-									<li><a href="#">Separated link</a></li>
-									<li><a href="#">One more separated link</a></li>
-								</ul></li> -->
+							<li class="active"><a href="${pageContext.request.contextPath}/member/verifyPassword">비밀번호변경</a></li>
 						</ul>
 					</div>
 				</div>
@@ -72,10 +54,18 @@
 			<div class="col-xs-3 col-sm-3"></div>
 			<div class="col-xs-6 col-sm-6">
 			
-	<form:form action="${pageContext.request.contextPath}/member/saveMember" 
-						modelAttribute="EditMember"  class="">	
+	<form:form action="${pageContext.request.contextPath}/member/verifyPassword" 
+						modelAttribute="Password"  class="">	
 	<h3> 비밀번호를 한 번 더 입력해주세요</h3>
-	<input type="password" value=""  class="form-control" name="passwd" />
+	<form:errors path="currentPassword" cssClass="error" />
+	<form:input path="currentPassword" placeholder="현재비밀번호 (*)" class="form-control" />
+	
+	<form:errors path="changePassword" cssClass="error" />
+	<form:password path="changePassword" placeholder="비밀번호 (*)" class="form-control" />
+	
+	<form:errors path="chageMatchingPassword" cssClass="error" />
+	<form:password path="chageMatchingPassword" placeholder="비밀번호 확인 (*)" class="form-control" />
+	
 	<input type="submit"class="btn btn-success"  value="정보변경하기"/>
 	
 	</form:form>

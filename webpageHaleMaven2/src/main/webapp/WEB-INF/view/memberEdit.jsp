@@ -1,5 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+
 <!doctype html>
 <html>
 <head>
@@ -7,10 +9,19 @@
 <!-- 부트스트랩-->
 	<link rel="stylesheet"
 		 href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>	
 	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	
+		
+		<style>
+		.error {color:red}
+	</style>
+	
 <title>관리자페이지</title>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 </head>
@@ -33,9 +44,8 @@
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="${pageContext.request.contextPath}/">Home</a></li>
-							<li class="active"><a href="${pageContext.request.contextPath}/member/editMember">회원 정보</a></li>
-
-							<li><a href="${pageContext.request.contextPath}/member/verifyPassword">비밀번호변경</a></li>
+							<li class="active"><a href="${pageContext.request.contextPath}/member/editMember">회원 정보 변경</a></li>
+							<li><a href="${pageContext.request.contextPath}/member/changePassword">비밀번호변경</a></li>
 
 							<!-- <li><a href="/asp-shoppingMall/mall/memberList.asp">회원록록</a></li>
 
@@ -61,7 +71,7 @@
 		</div>
 	</div>
 
-	<div class="rows">
+<div class="rows">
 <div class="container">
  
    <div clss="col-xs-12 col-sm-12">
@@ -74,6 +84,7 @@
 <!-- 수정 폼 -->
 		<form:form action="${pageContext.request.contextPath}/member/saveMember" 
 						modelAttribute="EditMember"  class="">
+						
          <table class="table table-striped" >
             <tr>
               <th>등록할 회원 ID </th>
@@ -156,6 +167,25 @@
               </td>
             </tr>
             
+             <tr>
+              <th>이메일 수신 </th>
+              <td>
+    			<form:radiobutton path="mem_receive_email" value="1" label="수신" />
+    			<form:radiobutton path="mem_receive_email" value="0" label="비수신" />
+    			<form:errors path="mem_receive_email" cssClass="error"/>
+    			
+              </td>
+            </tr>
+            <tr>
+              <th>문자 수신 </th>
+              <td>
+				<form:radiobutton path="mem_receive_sms" value="1" label="수신" />
+    			<form:radiobutton path="mem_receive_sms" value="0" label="비수신" />
+				<form:errors path="mem_receive_sms" cssClass="error"/>              
+              </td>
+            </tr>
+            
+            
             <tr>
             	<th>생일</th>
             	<td>
@@ -180,8 +210,10 @@
               </td>
             </tr>
          </table>
+         
     </form:form>
- 
+
+							
      </div>
    </div>
  
