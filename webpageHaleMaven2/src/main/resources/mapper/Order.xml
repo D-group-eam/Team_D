@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.Order"> 
+
+	<!-- 주문 현황 불러오기  -->
+	<select id="getOrderList" parameterType="OrderPage" resultType="Order">
+		SELECT 
+			m_o.mot_id as mot_id,
+			m_o.mem_id as mem_id,
+			m_o.mem_nickname as mem_nickname,
+			m_o.mem_realname as mem_realname,	
+			m_o.mem_email as mem_email,	
+			m_o.mem_phone as mem_phone,	
+			m_o.mot_memo as mot_memo,	
+			m_o.mot_total_money as mot_total_money,	
+			m_o.mot_deposit as mot_deposit,	
+			m_o.mot_cash_request as mot_cash_request,
+			m_o.mot_cash as mot_cash,
+			m_o.mot_pay_type as mot_pay_type,	
+			m_o.mot_status as mot_status,
+			m_o.mot_order_date as mot_order_date,
+			modt_count,
+			mit_price 
+		FROM test_mall_order m_o, test_mall_order_detail m_o_d, item m_i
+		WHERE m_o.mot_id = m_o_d.mot_id AND
+			m_o.mem_id = m_o_d.mem_id AND    
+			m_o.mem_nickname=#{nickname}
+			Limit #{startNum}, #{itemsPerPage}
+	</select>
+
+	<select id="getMotTotalMoney" parameterType="String" resultType="int">
+		SELECT sum(mot_total_money)	
+		FROM test_mall_order 
+		WHERE mem_nickname=#{nickname}
+	</select>
+
+
+
+
+</mapper>
