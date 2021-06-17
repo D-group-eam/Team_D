@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;}
+.tg td{background-color:#fff;border-bottom-width:1px;border-color:#ccc;border-style:solid;border-top-width:1px;
+  border-width:0px;color:#333;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;
+  word-break:normal;}
+.tg th{background-color:#f0f0f0;border-bottom-width:1px;border-color:#ccc;border-style:solid;border-top-width:1px;
+  border-width:0px;color:#333;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;
+  padding:10px 5px;word-break:normal;}
+.tg .tg-buh4{background-color:#f9f9f9;text-align:left;vertical-align:top}
+.tg .tg-73oq{border-color:#000000;text-align:center;vertical-align:top;}
+.tg .tg-btxf{background-color:#f9f9f9;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{
+    text-align:left;vertical-align:top;
+}
+td {
+    height:18px;
+}
+
+  a {
+  text-decoration-line: none;
+}
+a:link { color:black; text-decoration: none;}
+a:visited { color:black; text-decoration: none;}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>메인 화면</title>
+</head>
+<body>
+<div class="container">
+<table class="tg">
+    <tbody>
+    <tr>
+        <td class="tg-73oq" style="width:100px">글번호</td>
+        <td class="tg-73oq" style="width:400px">제목</td>
+        <td class="tg-73oq" style="width:100px">작성자</td>
+        <td class="tg-73oq" style="width:100px">작성시간</td>
+    </tr>
+    <tr th:each="qaForm : ${qaForms}">
+        <td class="tg-btxf" style="text-align:center"></td>
+        <td class="tg-btxf" style="text-align:left" th:text="${qaForm.QA_orderNumber}"></td>
+        <td class="tg-btxf" style="text-align:center">테스트</td>
+        <td class="tg-btxf" style="text-align:center">테스트</td>
+    </tr>
+    <tr>
+        <td class="tg-0pky"></td>
+        <td class="tg-0pky"></td>
+        <td class="tg-0pky"></td>
+        <td class="tg-0pky"></td>
+    </tr>
+    <tr>
+        <td class="tg-btxf"></td>
+        <td class="tg-btxf"></td>
+        <td class="tg-btxf"></td>
+        <td class="tg-btxf"></td>
+    </tr>
+    <tr>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+        <td class="tg-buh4"></td>
+        <td class="tg-buh4"></td>
+        <td class="tg-buh4"></td>
+        <td class="tg-buh4"></td>
+    </tr>
+    <tr>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+        <td class="tg-buh4"></td>
+        <td class="tg-buh4"></td>
+        <td class="tg-buh4"></td>
+        <td class="tg-buh4"></td>
+    </tr>
+    <tr>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+    </tr>
+    <tr>
+        <td class="tg-buh4"></td>
+        <td class="tg-buh4"></td>
+        <td class="tg-buh4"></td>
+        <td class="tg-buh4"></td>
+    </tr>
+    <tr>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+    </tr>
+    </tbody>
+</table>
+    <form>
+        <button type="button"><a href="/contents/new">작성</a></button>
+    </form>
+</div>
+
+</body>
+</html>
